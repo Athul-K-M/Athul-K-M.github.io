@@ -3,28 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Athul KM | Developer Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Athul KM - Computer Science student interested in programming, web development and technology.">
 
     <style>
+        :root {
+            --background: #080b09;
+            --surface: #101510;
+            --accent: #b5ff6d;
+            --text: #f3f5ef;
+            --muted: #a0a89e;
+            --border: rgba(181, 255, 109, 0.15);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
-            background: #080a0d;
-            color: #f1f1f1;
-            font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
         }
 
         a {
@@ -40,483 +45,773 @@
 
         /* NAVIGATION */
 
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(8, 11, 9, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
         nav {
+            min-height: 75px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 28px 0;
+            gap: 20px;
         }
 
         .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 23px;
-            font-weight: 700;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         .logo span {
-            color: #b5ff6d;
+            color: var(--accent);
         }
 
         .nav-links {
             display: flex;
             gap: 30px;
-            color: #a5a5a5;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
             font-size: 14px;
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: #b5ff6d;
+            color: var(--accent);
         }
 
         /* HERO */
 
         .hero {
-            min-height: 83vh;
+            min-height: 620px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            padding: 70px 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 100px 0;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: #b5ff6d;
-            filter: blur(180px);
-            opacity: 0.10;
-            right: 0;
-            top: 15%;
-            z-index: -1;
+        .hero-content {
+            flex: 1;
         }
 
         .tag {
-            color: #b5ff6d;
-            letter-spacing: 3px;
+            color: var(--accent);
             font-size: 12px;
+            letter-spacing: 3px;
             margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(48px, 9vw, 100px);
-            line-height: 1.05;
-            letter-spacing: -5px;
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.1;
+            margin-bottom: 25px;
         }
 
         .hero h1 span {
-            color: #b5ff6d;
+            color: var(--accent);
         }
 
         .hero-description {
-            color: #999;
-            font-size: 17px;
-            line-height: 1.8;
+            color: var(--muted);
             max-width: 550px;
-            margin-top: 25px;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        .hero-image {
+            width: 320px;
+            height: 380px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border: 1px solid var(--accent);
+            border-radius: 15px;
+            box-shadow: 0 0 45px rgba(181, 255, 109, 0.12);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
-            margin-top: 35px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .btn {
-            padding: 14px 24px;
-            border: 1px solid #343a40;
+            padding: 13px 23px;
             border-radius: 5px;
             font-size: 14px;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         .btn-primary {
-            background: #b5ff6d;
-            color: #080a0d;
-            border-color: #b5ff6d;
-            font-weight: 700;
+            background: var(--accent);
+            color: #080b09;
         }
 
-        .btn:hover {
-            transform: translateY(-4px);
+        .btn-primary:hover {
+            box-shadow: 0 0 25px rgba(181, 255, 109, 0.35);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            color: var(--text);
         }
 
         .btn-secondary:hover {
-            border-color: #b5ff6d;
+            border-color: var(--accent);
+            color: var(--accent);
         }
 
         /* GENERAL SECTIONS */
 
         section {
-            padding: 100px 0;
-            border-top: 1px solid #202329;
+            padding: 90px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
 
         .section-label {
-            color: #b5ff6d;
+            color: var(--accent);
             font-size: 12px;
             letter-spacing: 3px;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(32px, 5vw, 52px);
-            margin-bottom: 25px;
+            font-size: 38px;
+            margin-bottom: 35px;
         }
 
-        .section-text {
-            color: #999;
-            line-height: 1.9;
-            max-width: 700px;
-            font-size: 16px;
+        .section-title span {
+            color: var(--accent);
+        }
+
+        .about-text {
+            max-width: 800px;
+            color: var(--muted);
+            font-size: 17px;
         }
 
         /* SKILLS */
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 40px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
-        .skill {
-            background: #11151a;
-            border: 1px solid #252b32;
-            padding: 28px 15px;
-            text-align: center;
-            border-radius: 8px;
-            font-size: 16px;
+        .skill-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: 10px;
             transition: 0.3s;
         }
 
-        .skill:hover {
-            border-color: #b5ff6d;
+        .skill-card:hover {
             transform: translateY(-5px);
+            border-color: var(--accent);
         }
 
-        /* PROJECTS */
+        .skill-card h3 {
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
 
-        .projects-grid {
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* EXPLORING */
+
+        .explore-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-            margin-top: 40px;
         }
 
-        .project-card {
-            background: #11151a;
-            border: 1px solid #252b32;
+        .explore-card {
+            background: var(--surface);
+            border-left: 3px solid var(--accent);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .explore-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .explore-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* LEARNING */
+
+        .learning-box {
+            background: linear-gradient(
+                135deg,
+                #111a10,
+                #101510
+            );
+            border: 1px solid var(--border);
             padding: 35px;
-            border-radius: 8px;
-            transition: 0.3s;
+            border-radius: 10px;
         }
 
-        .project-card:hover {
-            border-color: #b5ff6d;
-            transform: translateY(-5px);
+        .learning-box p {
+            color: var(--muted);
         }
 
-        .project-number {
-            color: #b5ff6d;
+        .learning-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .learning-tags span {
+            padding: 8px 15px;
+            border: 1px solid var(--border);
+            color: var(--accent);
+            border-radius: 30px;
             font-size: 13px;
-            margin-bottom: 25px;
         }
 
-        .project-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+        /* FUTURE PROJECTS */
+
+        .future-box {
+            padding: 40px;
+            background: var(--surface);
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .future-box h3 {
+            color: var(--accent);
             font-size: 23px;
             margin-bottom: 12px;
         }
 
-        .project-card p {
-            color: #999;
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-        .project-status {
-            display: inline-block;
-            margin-top: 25px;
-            color: #b5ff6d;
-            font-size: 12px;
+        .future-box p {
+            color: var(--muted);
         }
 
         /* CONTACT */
 
         .contact-box {
-            background: #11151a;
-            border: 1px solid #252b32;
+            background: var(--surface);
             padding: 45px;
-            border-radius: 10px;
-            margin-top: 30px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
         }
 
         .contact-box p {
-            color: #999;
-            line-height: 1.8;
+            color: var(--muted);
             margin-bottom: 25px;
         }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* FOOTER */
 
         footer {
             padding: 30px 0;
             text-align: center;
-            color: #777;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
             font-size: 13px;
         }
 
-        /* MOBILE */
+        footer span {
+            color: var(--accent);
+        }
 
-        @media (max-width: 650px) {
+        /* ANIMATIONS */
+
+        .reveal {
+            animation: fadeUp 0.9s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 750px) {
+
+            .container {
+                width: 90%;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
             .nav-links {
-                gap: 13px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
                 font-size: 12px;
             }
 
+            .hero {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                padding: 65px 0;
+                gap: 35px;
+            }
+
+            .hero-image {
+                width: 220px;
+                height: 260px;
+            }
+
             .hero h1 {
-                letter-spacing: -3px;
+                font-size: 49px;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .projects-grid {
+            .explore-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-box {
-                padding: 25px;
-            }
-
             section {
-                padding: 75px 0;
+                padding: 65px 0;
+            }
+
+            .section-title {
+                font-size: 31px;
+            }
+
+            .contact-box {
+                padding: 28px;
             }
         }
-        /* CONTACT BUTTON LAYOUT FIX */
 
-         .contact-box {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 18px;
+        @media (max-width: 420px) {
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                text-align: center;
+            }
         }
 
-         .contact-box p {
-          margin-bottom: 5px;
-        }
-
-        .contact-box .btn {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        max-width: 380px;
-        margin: 0 !important;
-        padding: 16px;
-        white-space: normal;
-        text-align: center;
-        line-height: 1.5;
-        box-sizing: border-box;
-        }
-        /* HERO IMAGE DESIGN */
-
-.hero-updated {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-image {
-    flex: 0 0 320px;
-    width: 320px;
-    height: 380px;
-    border: 1px solid #b5ff6d;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 0 45px rgba(181, 255, 109, 0.12);
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-@media (max-width: 650px) {
-    .hero-updated {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-    }
-
-    .hero-image {
-        width: 220px;
-        height: 260px;
-        flex: none;
-        margin-bottom: 25px;
-    }
-}
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- NAVIGATION -->
 
-        <nav>
-            <a href="#" class="logo">ATHUL<span>.</span></a>
+    <header>
+        <div class="container">
+            <nav>
 
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+                <a href="#" class="logo">
+                    ATHUL<span>.</span>
+                </a>
 
-        <main>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#exploring">Exploring</a></li>
+                    <li><a href="#learning">Learning</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-            <div class="hero hero-updated">
-
-    <div class="hero-content">
-        <p class="tag">WELCOME TO MY PORTFOLIO</p>
-
-        <h1>
-            Hey, I'm<br>
-            Athul <span>KM.</span>
-        </h1>
-
-        <p class="hero-description">
-            Computer Science student with an interest in
-            programming, technology and building things
-            that make a difference.
-        </p>
-
-        <div class="buttons">
-            <a href="#projects" class="btn btn-primary">
-                Explore My Work ↗
-            </a>
-
-            <a href="#contact" class="btn btn-secondary">
-                Get In Touch
-            </a>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <div class="hero-image">
-        <img src="./Profile.PNG" alt="Athul KM" style="display:block; width:100%; height:100%; object-fit:cover;">
-    </div>
 
-</div>
+    <!-- HERO SECTION -->
 
-            <section id="about">
-                <p class="section-label">01 / ABOUT ME</p>
+    <main>
 
-                <h2 class="section-title">A little about me.</h2>
+        <div class="container">
 
-                <p class="section-text">
-                    I'm Athul KM, a BSc Computer Science student
-                    interested in software development and technology.
-                    I enjoy learning new concepts, exploring programming
-                    and working on creative projects. I'm currently
-                    developing my skills and turning ideas into reality.
-                </p>
-            </section>
+            <div class="hero reveal">
 
-            <section id="skills">
-                <p class="section-label">02 / MY TOOLKIT</p>
+                <div class="hero-content">
 
-                <h2 class="section-title">Skills & Technologies.</h2>
-
-                <p class="section-text">
-                    Some of the programming languages and technologies
-                    I have worked with.
-                </p>
-
-                <div class="skills-grid">
-                    <div class="skill">C</div>
-                    <div class="skill">C++</div>
-                    <div class="skill">Python</div>
-                    <div class="skill">HTML</div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <p class="section-label">03 / SELECTED WORK</p>
-
-                <h2 class="section-title">Things I'm building.</h2>
-
-                <p class="section-text">
-                    A collection of projects, experiments and ideas.
-                    More projects will be added as I continue learning.
-                </p>
-
-                <div class="projects-grid">
-
-                    <div class="project-card">
-                        <p class="project-number">PROJECT 01</p>
-                        <h3>Trading Journal</h3>
-                        <p>
-                            A personal project focused on recording
-                            and organising trading activities.
-                        </p>
-                        <span class="project-status">In Development</span>
-                    </div>
-
-                    <div class="project-card">
-                        <p class="project-number">PROJECT 02</p>
-                        <h3>Quiz Website</h3>
-                        <p>
-                            An interactive quiz platform with
-                            multiple-choice questions and instant feedback.
-                        </p>
-                        <span class="project-status">In Development</span>
-                    </div>
-
-                </div>
-            </section>
-
-            <section id="contact">
-                <p class="section-label">04 / GET IN TOUCH</p>
-
-                <h2 class="section-title">Let's connect.</h2>
-
-                <div class="contact-box">
-                    <p>
-                        Interested in technology, programming or
-                        collaborating on projects? Find me on GitHub.
+                    <p class="tag">
+                        WELCOME TO MY PORTFOLIO
                     </p>
 
-                    <a href="https://github.com/Athul-K-M"
-                       target="_blank"
-                       class="btn btn-primary">
-                        Visit My GitHub ↗
-                    </a>
-                    <a href="https://www.linkedin.com/in/athul-k-m/"
-                       target="_blank"
-                       class="btn btn-secondary">
-                        Connect on LinkedIn ↗
-                    </a>
+                    <h1>
+                        Hey, I'm<br>
+                        Athul <span>KM.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Computer Science student with an interest in
+                        programming, web development, databases and
+                        exploring new technologies.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#skills" class="btn btn-primary">
+                            Explore My Skills ↗
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Get In Touch
+                        </a>
+
+                    </div>
+
                 </div>
-            </section>
 
-        </main>
 
-        <footer>
-            © 2026 Athul KM. Built with curiosity.
-        </footer>
+                <div class="hero-image">
 
-    </div>
+                    <img
+                        src="./Profile.PNG"
+                        alt="Athul KM"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT SECTION -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <p class="section-label">01 / ABOUT ME</p>
+
+                <h2 class="section-title">
+                    A Little About <span>Me.</span>
+                </h2>
+
+                <p class="about-text">
+                    I'm Athul KM, a BSc Computer Science student
+                    interested in technology and software development.
+
+                    I enjoy learning programming languages, understanding
+                    how applications work and exploring new ideas.
+
+                    My goal is to continuously improve my technical
+                    knowledge and develop useful digital solutions.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS SECTION -->
+
+        <section id="skills">
+
+            <div class="container">
+
+                <p class="section-label">02 / MY SKILLS</p>
+
+                <h2 class="section-title">
+                    Technologies I <span>Know.</span>
+                </h2>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <h3>C</h3>
+                        <p>Programming language</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>C++</h3>
+                        <p>Object-oriented programming</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>Python</h3>
+                        <p>Programming and problem solving</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>JavaScript</h3>
+                        <p>Web development</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>HTML</h3>
+                        <p>Web structure and development</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <h3>MySQL</h3>
+                        <p>Database management</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPLORING SECTION -->
+
+        <section id="exploring">
+
+            <div class="container">
+
+                <p class="section-label">03 / INTERESTS</p>
+
+                <h2 class="section-title">
+                    What I'm <span>Exploring.</span>
+                </h2>
+
+                <div class="explore-grid">
+
+                    <div class="explore-card">
+
+                        <h3>Software Development</h3>
+
+                        <p>
+                            Exploring programming concepts,
+                            application development and ways to
+                            solve real-world problems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="explore-card">
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Exploring how websites are designed,
+                            developed and made interactive.
+                        </p>
+
+                    </div>
+
+
+                    <div class="explore-card">
+
+                        <h3>Database Systems</h3>
+
+                        <p>
+                            Understanding how data is stored,
+                            organized, retrieved and managed.
+                        </p>
+
+                    </div>
+
+
+                    <div class="explore-card">
+
+                        <h3>Technology</h3>
+
+                        <p>
+                            Discovering new technologies,
+                            programming tools and development
+                            approaches.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEARNING SECTION -->
+
+        <section id="learning">
+
+            <div class="container">
+
+                <p class="section-label">04 / GROWTH</p>
+
+                <h2 class="section-title">
+                    Always <span>Learning.</span>
+                </h2>
+
+                <div class="learning-box">
+
+                    <p>
+                        Technology never stops evolving, and neither
+                        does learning. I'm continuously working on
+                        improving my programming knowledge,
+                        strengthening my fundamentals and exploring
+                        new possibilities in computer science.
+                    </p>
+
+                    <div class="learning-tags">
+
+                        <span>Programming</span>
+                        <span>Web Development</span>
+                        <span>Databases</span>
+                        <span>Problem Solving</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FUTURE PROJECTS -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <p class="section-label">05 / WHAT'S NEXT</p>
+
+                <h2 class="section-title">
+                    The Journey <span>Continues.</span>
+                </h2>
+
+                <div class="future-box">
+
+                    <h3>More Coming Soon.</h3>
+
+                    <p>
+                        I'm working towards building meaningful
+                        projects and turning ideas into functional
+                        applications.
+
+                        This space will showcase my future work
+                        as I continue growing as a developer.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <p class="section-label">06 / CONTACT</p>
+
+                <h2 class="section-title">
+                    Let's <span>Connect.</span>
+                </h2>
+
+                <div class="contact-box">
+
+                    <p>
+                        Interested in technology, programming
+                        or collaboration? Feel free to connect
+                        with me through my profiles.
+                    </p>
+
+                    <div class="contact-buttons">
+
+                        <a
+                            href="https://github.com/Athul-K-M"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-primary"
+                        >
+                            GitHub ↗
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/athul-k-m/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                Designed & Built by
+                <span>Athul KM</span>
+                | © 2026
+            </p>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
