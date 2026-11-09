@@ -365,6 +365,16 @@
             }
         }
 
+
+        /* DYNAMIC CONTENT */
+        .dynamic-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+        .certificate-card,.achievement-card { background:var(--surface); border:1px solid var(--border); padding:25px; border-radius:10px; transition:.3s; }
+        .certificate-card:hover,.achievement-card:hover { transform:translateY(-5px); border-color:var(--accent); }
+        .card-kicker { color:var(--accent); font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+        .certificate-card h3,.achievement-card h3 { font-size:21px; margin-bottom:7px; }
+        .card-meta,.card-description { color:var(--muted); font-size:14px; margin-bottom:14px; }
+        .empty-note { color:var(--muted); border:1px dashed var(--border); border-radius:10px; padding:24px; grid-column:1/-1; }
+
         /* MOBILE RESPONSIVENESS */
 
         @media (max-width: 750px) {
@@ -465,6 +475,8 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#exploring">Exploring</a></li>
                     <li><a href="#learning">Learning</a></li>
+                    <li><a href="#certifications">Certificates</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
 
@@ -714,6 +726,42 @@
         </section>
 
 
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications">
+            <div class="container">
+                <p class="section-label">05 / CERTIFICATIONS</p>
+                <h2 class="section-title">Proof of <span>Learning.</span></h2>
+                <div class="dynamic-grid" id="certificatesGrid">
+                    <article class="certificate-card">
+                        <p class="card-kicker">NPTEL · January–February 2026</p>
+                        <h3>Python for Data Science</h3>
+                        <p class="card-meta">4-week course · Score: 79 · 2 recommended credits</p>
+                        <p class="card-description">Completed the NPTEL Python for Data Science course.</p>
+                        <a class="btn btn-primary" href="./certificates/python-for-data-science.pdf" target="_blank" rel="noopener">View Certificate ↗</a>
+                    </article>
+                    <article class="certificate-card">
+                        <p class="card-kicker">NPTEL · July–October 2026</p>
+                        <h3>Ethical Hacking</h3>
+                        <p class="card-meta">12-week course · Score: 68% · 4 recommended credits</p>
+                        <p class="card-description">Completed the NPTEL Ethical Hacking course.</p>
+                        <a class="btn btn-primary" href="./certificates/ethical-hacking.pdf" target="_blank" rel="noopener">View Certificate ↗</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section id="achievements">
+            <div class="container">
+                <p class="section-label">06 / MILESTONES</p>
+                <h2 class="section-title">Achievements & <span>Milestones.</span></h2>
+                <div class="dynamic-grid" id="achievementsGrid">
+                    <p class="empty-note">New achievements will appear here as they are added.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- FUTURE PROJECTS -->
 
         <section id="projects">
@@ -813,5 +861,6 @@
 
     </footer>
 
+<script type="module" src="./js/public-content.js"></script>
 </body>
 </html>
