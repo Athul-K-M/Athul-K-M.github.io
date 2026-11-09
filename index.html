@@ -310,6 +310,7 @@
         padding: 25px;
         border-radius: 10px;
         transition: 0.3s;
+        min-width: 0;
     }
     .certificate-card:hover,
     .achievement-card:hover {
@@ -347,10 +348,12 @@
         align-items: center;
         justify-content: center;
         white-space: nowrap;
-        width: fit-content;
+        width: auto;
         max-width: 100%;
-        padding: 13px 18px;
+        padding: 11px 14px;
         font-size: 13px;
+        box-sizing: border-box;
+        vertical-align: middle;
     }
     /* MOBILE RESPONSIVENESS */
     @media (max-width: 750px) {
@@ -402,6 +405,9 @@
         .skills-grid {
             grid-template-columns: 1fr;
         }
+        .dynamic-grid {
+            grid-template-columns: 1fr;
+        }
         .hero h1 {
             font-size: 42px;
         }
@@ -423,287 +429,287 @@
             <a href="#" class="logo">
                 ATHUL<span>.</span>
             </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#exploring">Exploring</a></li>
-                <li><a href="#learning">Learning</a></li>
-                <li><a href="#certifications">Certificates</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#exploring">Exploring</a></li>
+            <li><a href="#learning">Learning</a></li>
+            <li><a href="#certifications">Certificates</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
 </header>
 <!-- HERO SECTION -->
 <main>
     <div class="container">
         <div class="hero reveal">
-            <div class="hero-content">
-                <p class="tag">
-                    WELCOME TO MY PORTFOLIO
-                </p>
-                <h1>
-                    Hey, I'm<br>
-                    Athul <span>KM.</span>
-                </h1>
-                <p class="hero-description">
-                    Computer Science student with an interest in
-                    programming, web development, databases and
-                    exploring new technologies.
-                </p>
-                <div class="buttons">
-                    <a href="#skills" class="btn btn-primary">
-                        Explore My Skills ↗
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        Get In Touch
-                    </a>
-                </div>
+        <div class="hero-content">
+            <p class="tag">
+                WELCOME TO MY PORTFOLIO
+            </p>
+            <h1>
+                Hey, I'm<br>
+                Athul <span>KM.</span>
+            </h1>
+            <p class="hero-description">
+                Computer Science student with an interest in
+                programming, web development, databases and
+                exploring new technologies.
+            </p>
+            <div class="buttons">
+                <a href="#skills" class="btn btn-primary">
+                    Explore My Skills ↗
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    Get In Touch
+                </a>
             </div>
-            <div class="hero-image">
-                <img
-                    src="./Profile.PNG"
-                    alt="Athul KM"
-                >
+        </div>
+        <div class="hero-image">
+            <img
+                src="./Profile.PNG"
+                alt="Athul KM"
+            >
+        </div>
+    </div>
+</div>
+<!-- ABOUT SECTION -->
+<section id="about">
+    <div class="container">
+        <p class="section-label">01 / ABOUT ME</p>
+        <h2 class="section-title">
+            A Little About <span>Me.</span>
+        </h2>
+        <p class="about-text">
+            I'm Athul KM, a BSc Computer Science student
+            interested in technology and software development.
+            I enjoy learning programming languages, understanding
+            how applications work and exploring new ideas.
+            My goal is to continuously improve my technical
+            knowledge and develop useful digital solutions.
+        </p>
+    </div>
+</section>
+<!-- SKILLS SECTION -->
+<section id="skills">
+    <div class="container">
+        <p class="section-label">02 / MY SKILLS</p>
+        <h2 class="section-title">
+            Technologies I <span>Know.</span>
+        </h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>C</h3>
+                <p>Programming language</p>
+            </div>
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>Object-oriented programming</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Programming and problem solving</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Web development</p>
+            </div>
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Web structure and development</p>
+            </div>
+            <div class="skill-card">
+                <h3>MySQL</h3>
+                <p>Database management</p>
             </div>
         </div>
     </div>
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container">
-            <p class="section-label">01 / ABOUT ME</p>
-            <h2 class="section-title">
-                A Little About <span>Me.</span>
-            </h2>
-            <p class="about-text">
-                I'm Athul KM, a BSc Computer Science student
-                interested in technology and software development.
-                I enjoy learning programming languages, understanding
-                how applications work and exploring new ideas.
-                My goal is to continuously improve my technical
-                knowledge and develop useful digital solutions.
+</section>
+<!-- EXPLORING SECTION -->
+<section id="exploring">
+    <div class="container">
+        <p class="section-label">03 / INTERESTS</p>
+        <h2 class="section-title">
+            What I'm <span>Exploring.</span>
+        </h2>
+        <div class="explore-grid">
+            <div class="explore-card">
+                <h3>Software Development</h3>
+                <p>
+                    Exploring programming concepts,
+                    application development and ways to
+                    solve real-world problems.
+                </p>
+            </div>
+            <div class="explore-card">
+                <h3>Web Development</h3>
+                <p>
+                    Exploring how websites are designed,
+                    developed and made interactive.
+                </p>
+            </div>
+            <div class="explore-card">
+                <h3>Database Systems</h3>
+                <p>
+                    Understanding how data is stored,
+                    organized, retrieved and managed.
+                </p>
+            </div>
+            <div class="explore-card">
+                <h3>Technology</h3>
+                <p>
+                    Discovering new technologies,
+                    programming tools and development
+                    approaches.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- LEARNING SECTION -->
+<section id="learning">
+    <div class="container">
+        <p class="section-label">04 / GROWTH</p>
+        <h2 class="section-title">
+            Always <span>Learning.</span>
+        </h2>
+        <div class="learning-box">
+            <p>
+                Technology never stops evolving, and neither
+                does learning. I'm continuously working on
+                improving my programming knowledge,
+                strengthening my fundamentals and exploring
+                new possibilities in computer science.
+            </p>
+            <div class="learning-tags">
+                <span>Programming</span>
+                <span>Web Development</span>
+                <span>Databases</span>
+                <span>Problem Solving</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CERTIFICATIONS SECTION -->
+<section id="certifications">
+    <div class="container">
+        <p class="section-label">05 / CERTIFICATIONS</p>
+        <h2 class="section-title">
+            Proof of <span>Learning.</span>
+        </h2>
+        <div class="dynamic-grid" id="certificatesGrid">
+            <article class="certificate-card">
+                <p class="card-kicker">
+                    NPTEL · January–February 2026
+                </p>
+                <h3>Python for Data Science</h3>
+                <p class="card-meta">
+                    4-week course · Score: 79 · 2 recommended credits
+                </p>
+                <p class="card-description">
+                    Completed the NPTEL Python for Data Science course.
+                </p>
+                <a
+                    class="btn btn-primary"
+                    href="./certificates/python-for-data-science.pdf"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Certificate ↗
+                </a>
+            </article>
+            <article class="certificate-card">
+                <p class="card-kicker">
+                    NPTEL · July–October 2026
+                </p>
+                <h3>Ethical Hacking</h3>
+                <p class="card-meta">
+                    12-week course · Score: 68% · 4 recommended credits
+                </p>
+                <p class="card-description">
+                    Completed the NPTEL Ethical Hacking course.
+                </p>
+                <a
+                    class="btn btn-primary"
+                    href="./certificates/ethical-hacking.pdf"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    View Certificate ↗
+                </a>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- ACHIEVEMENTS SECTION -->
+<section id="achievements">
+    <div class="container">
+        <p class="section-label">06 / MILESTONES</p>
+        <h2 class="section-title">
+            Achievements & <span>Milestones.</span>
+        </h2>
+        <div class="dynamic-grid" id="achievementsGrid">
+            <p class="empty-note">
+                New achievements will appear here as they are added.
             </p>
         </div>
-    </section>
-    <!-- SKILLS SECTION -->
-    <section id="skills">
-        <div class="container">
-            <p class="section-label">02 / MY SKILLS</p>
-            <h2 class="section-title">
-                Technologies I <span>Know.</span>
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>C</h3>
-                    <p>Programming language</p>
-                </div>
-                <div class="skill-card">
-                    <h3>C++</h3>
-                    <p>Object-oriented programming</p>
-                </div>
-                <div class="skill-card">
-                    <h3>Python</h3>
-                    <p>Programming and problem solving</p>
-                </div>
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>Web development</p>
-                </div>
-                <div class="skill-card">
-                    <h3>HTML</h3>
-                    <p>Web structure and development</p>
-                </div>
-                <div class="skill-card">
-                    <h3>MySQL</h3>
-                    <p>Database management</p>
-                </div>
+    </div>
+</section>
+<!-- FUTURE PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <p class="section-label">07 / WHAT'S NEXT</p>
+        <h2 class="section-title">
+            The Journey <span>Continues.</span>
+        </h2>
+        <div class="future-box">
+            <h3>More Coming Soon.</h3>
+            <p>
+                I'm working towards building meaningful
+                projects and turning ideas into functional
+                applications.
+                This space will showcase my future work
+                as I continue growing as a developer.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <div class="container">
+        <p class="section-label">08 / CONTACT</p>
+        <h2 class="section-title">
+            Let's <span>Connect.</span>
+        </h2>
+        <div class="contact-box">
+            <p>
+                Interested in technology, programming
+                or collaboration? Feel free to connect
+                with me through my profiles.
+            </p>
+            <div class="contact-buttons">
+                <a
+                    href="https://github.com/Athul-K-M"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    GitHub ↗
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/athul-k-m/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary"
+                >
+                    LinkedIn ↗
+                </a>
             </div>
         </div>
-    </section>
-    <!-- EXPLORING SECTION -->
-    <section id="exploring">
-        <div class="container">
-            <p class="section-label">03 / INTERESTS</p>
-            <h2 class="section-title">
-                What I'm <span>Exploring.</span>
-            </h2>
-            <div class="explore-grid">
-                <div class="explore-card">
-                    <h3>Software Development</h3>
-                    <p>
-                        Exploring programming concepts,
-                        application development and ways to
-                        solve real-world problems.
-                    </p>
-                </div>
-                <div class="explore-card">
-                    <h3>Web Development</h3>
-                    <p>
-                        Exploring how websites are designed,
-                        developed and made interactive.
-                    </p>
-                </div>
-                <div class="explore-card">
-                    <h3>Database Systems</h3>
-                    <p>
-                        Understanding how data is stored,
-                        organized, retrieved and managed.
-                    </p>
-                </div>
-                <div class="explore-card">
-                    <h3>Technology</h3>
-                    <p>
-                        Discovering new technologies,
-                        programming tools and development
-                        approaches.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- LEARNING SECTION -->
-    <section id="learning">
-        <div class="container">
-            <p class="section-label">04 / GROWTH</p>
-            <h2 class="section-title">
-                Always <span>Learning.</span>
-            </h2>
-            <div class="learning-box">
-                <p>
-                    Technology never stops evolving, and neither
-                    does learning. I'm continuously working on
-                    improving my programming knowledge,
-                    strengthening my fundamentals and exploring
-                    new possibilities in computer science.
-                </p>
-                <div class="learning-tags">
-                    <span>Programming</span>
-                    <span>Web Development</span>
-                    <span>Databases</span>
-                    <span>Problem Solving</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications">
-        <div class="container">
-            <p class="section-label">05 / CERTIFICATIONS</p>
-            <h2 class="section-title">
-                Proof of <span>Learning.</span>
-            </h2>
-            <div class="dynamic-grid" id="certificatesGrid">
-                <article class="certificate-card">
-                    <p class="card-kicker">
-                        NPTEL · January–February 2026
-                    </p>
-                    <h3>Python for Data Science</h3>
-                    <p class="card-meta">
-                        4-week course · Score: 79 · 2 recommended credits
-                    </p>
-                    <p class="card-description">
-                        Completed the NPTEL Python for Data Science course.
-                    </p>
-                    <a
-                        class="btn btn-primary"
-                        href="./certificates/python-for-data-science.pdf"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        View Certificate ↗
-                    </a>
-                </article>
-                <article class="certificate-card">
-                    <p class="card-kicker">
-                        NPTEL · July–October 2026
-                    </p>
-                    <h3>Ethical Hacking</h3>
-                    <p class="card-meta">
-                        12-week course · Score: 68% · 4 recommended credits
-                    </p>
-                    <p class="card-description">
-                        Completed the NPTEL Ethical Hacking course.
-                    </p>
-                    <a
-                        class="btn btn-primary"
-                        href="./certificates/ethical-hacking.pdf"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        View Certificate ↗
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!-- ACHIEVEMENTS SECTION -->
-    <section id="achievements">
-        <div class="container">
-            <p class="section-label">06 / MILESTONES</p>
-            <h2 class="section-title">
-                Achievements & <span>Milestones.</span>
-            </h2>
-            <div class="dynamic-grid" id="achievementsGrid">
-                <p class="empty-note">
-                    New achievements will appear here as they are added.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- FUTURE PROJECTS -->
-    <section id="projects">
-        <div class="container">
-            <p class="section-label">07 / WHAT'S NEXT</p>
-            <h2 class="section-title">
-                The Journey <span>Continues.</span>
-            </h2>
-            <div class="future-box">
-                <h3>More Coming Soon.</h3>
-                <p>
-                    I'm working towards building meaningful
-                    projects and turning ideas into functional
-                    applications.
-                    This space will showcase my future work
-                    as I continue growing as a developer.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container">
-            <p class="section-label">08 / CONTACT</p>
-            <h2 class="section-title">
-                Let's <span>Connect.</span>
-            </h2>
-            <div class="contact-box">
-                <p>
-                    Interested in technology, programming
-                    or collaboration? Feel free to connect
-                    with me through my profiles.
-                </p>
-                <div class="contact-buttons">
-                    <a
-                        href="https://github.com/Athul-K-M"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-primary"
-                    >
-                        GitHub ↗
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/athul-k-m/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-secondary"
-                    >
-                        LinkedIn ↗
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 </main>
 <!-- FOOTER -->
 <footer>
@@ -715,6 +721,7 @@
         </p>
     </div>
 </footer>
+<!-- SUPABASE DYNAMIC CONTENT -->
 <script type="module" src="./js/public-content.js"></script>
 </body>
 </html>
