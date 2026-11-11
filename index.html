@@ -714,7 +714,7 @@
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <p>
+        <p id="adminTrigger">
             Designed & Built by
             <span>Athul KM</span>
             | © 2026
@@ -723,5 +723,21 @@
 </footer>
 <!-- SUPABASE DYNAMIC CONTENT -->
 <script type="module" src="./js/public-content.js"></script>
+<script>
+    const adminTrigger = document.getElementById("adminTrigger");
+    let clickCount = 0;
+    let clickTimer;
+    adminTrigger.addEventListener("click", function () {
+        clickCount++;
+        clearTimeout(clickTimer);
+        if (clickCount >= 5) {
+            window.location.href = "./admin.html";
+            return;
+        }
+        clickTimer = setTimeout(function () {
+            clickCount = 0;
+        }, 3000);
+    });
+</script>   
 </body>
 </html>
